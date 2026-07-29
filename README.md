@@ -2,22 +2,13 @@
 
 Online retailers spend most of their marketing budget acquiring customers and very little understanding the ones they already have. This project takes a year of UK online-retail transactions (UCI ML Repo dataset 352) and turns it into a small intelligence layer: who the best customers are, who is about to leave, and how well each acquisition cohort retains over time. The goal is a dashboard a non-technical operator can open and act on, not a research notebook.
 
-> **At a glance**
-> **Question:** with nothing but a transaction log — no demographics, no
-> surveys — how much can a small retailer know about who to retain, who
-> to win back, and whether retention is getting better or worse?
-> **Approach:** RFM scoring → KMeans segmentation into four
-> operator-memorable segments → a Random Forest churn model on top of the
-> RFM features → monthly cohort retention. Deployed as a Streamlit
-> dashboard over 540K transactions.
-> **Decisions this supports:** which segment gets the win-back budget
-> (At Risk, not Lost), which "Champions" are quietly going cold despite a
-> high lifetime value, and whether this quarter's acquisition cohorts
-> retain worse than last year's — the early warning that growth is
-> masking a retention problem.
-> **Honest caveat:** churn here means "90 days of silence," which is a
-> proxy, not a fact. The limitations section explains why, and what would
-> need to change in production.
+The decisions this is meant to support: which segment gets the win-back
+budget (At Risk, not Lost), which high-value customers are quietly going
+cold, and whether recent acquisition cohorts retain worse than older
+ones, which is the early warning that growth is masking a retention
+problem. One honest caveat up front: churn here means "90 days of
+silence", which is a proxy, not a fact. The limitations section explains
+why.
 
 ## Components
 
